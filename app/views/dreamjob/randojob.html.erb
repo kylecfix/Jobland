@@ -2,22 +2,24 @@
 <br>
 
 <div>
-
+  <%if @unicorn_click=="yes"%>
+      <div>
+            <%@results.model.jobs.each do |job|%>
+              <%=@title = job.title%>
+              <%=@location =  job.location%>
+          	<%end%> 
+          	<p>DO ALL THE THINGS!</p>
+<a href="http://localhost:3000/dreamjob/jobpath"><img src="http://cdn2.technology.ie/wp-content/uploads/2013/10/pickme.jpg" height= "300" width= "300"/></a>
+      </div>
+     <%else%>
+      
+  <% end %>
 </div>
 
 <br>
+
+<a href="http://localhost:3000/?unicorn=yes"><img src="http://img1.wikia.nocookie.net/__cb20130408185142/glee/images/a/a0/Unicorn!.gif" height= "500" width= "500"/></a>
 <br>
-<br>
-<br>
-
-<a href="localhost:3000/?unicorn=true" target="_blank"><img src="http://img1.wikia.nocookie.net/__cb20130408185142/glee/images/a/a0/Unicorn!.gif" height= "300" width= "300"/></a>
-
-<br>
-
-
-
-
-
 
 
 

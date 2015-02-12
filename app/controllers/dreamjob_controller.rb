@@ -1,7 +1,8 @@
 class DreamjobController < ApplicationController
   def randojob
-        require 'cb'
-        require 'pry'
+
+        @unicorn_click = params[:unicorn]
+
 
         # add our developer key to the cb gem configuration
         #     Cb.configure do |config|
@@ -10,23 +11,18 @@ class DreamjobController < ApplicationController
         #     end
 
         # ask the important questions
-            search_location = "atlanta, ga"
-            search_this_keyword = "Software Engineer"
+            job_array = ["lawyer", "doctor", "engineer", "police", "fire", "surgeon", "manager", "teacher"]
+            location_array = ["Atlanta", "Raleigh", "Orlando", "Indianapolis", "Denver"]
+            search_location = location_array.shuffle.last
+            search_this_keyword = job_array.shuffle.shuffle.first
 
         # the api wants keywords as comma seperated
             user_keywords = search_this_keyword.split(" ").join(',')
 
         # Use our CB job helper to search for jobs in atlanta
-            results = Cb.job.search({ location: search_location,
-                                      title: search_this_keyword,
-                                      #keywords: user_keywords,
+            @results = Cb.job.search({ location: search_location,
+                                      keyword: user_keywords
                                     })
-
-            results.model.jobs.each do |job|
-              @title = job.title
-              puts "Pay: #{job.pay}"
-              puts "Location: #{job.location}"
-    end
   end
 
   def jobpath
