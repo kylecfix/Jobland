@@ -2,7 +2,13 @@
 <br>
 
 <div>
-
+  <% if @unicorn_click="true" %>
+      <div>
+        <%=@title%>
+        <%=@pay%>
+        <%=@location%>
+      </div>
+  <% end %>
 </div>
 
 <br>
@@ -10,7 +16,7 @@
 <br>
 <br>
 
-<a href="<% link_to randojob_path with ?unicorn=true %>" target="_blank"><img src="http://img1.wikia.nocookie.net/__cb20130408185142/glee/images/a/a0/Unicorn!.gif" height= "300" width= "300"/></a>
+<a href="http://localhost:3000/randojob/?unicorn=true %>" target="_blank"><img src="http://img1.wikia.nocookie.net/__cb20130408185142/glee/images/a/a0/Unicorn!.gif" height= "300" width= "300"/></a>
 
 <br>
 
