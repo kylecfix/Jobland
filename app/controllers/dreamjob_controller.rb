@@ -1,5 +1,8 @@
 class DreamjobController < ApplicationController
   def randojob
+
+        @unicorn_click = params[:unicorn]
+
         require 'cb'
         require 'pry'
 
@@ -18,14 +21,14 @@ class DreamjobController < ApplicationController
 
         # Use our CB job helper to search for jobs in atlanta
             results = Cb.job.search({ location: search_location,
-                                      title: search_this_keyword,
-                                      #keywords: user_keywords,
+                                      keyword: user_keywords
                                     })
 
             results.model.jobs.each do |job|
               @title = job.title
-              puts "Pay: #{job.pay}"
-              puts "Location: #{job.location}"
+              @location =  job.location
+              @pay = job.pay
+
     end
   end
 
