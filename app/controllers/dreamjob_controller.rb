@@ -2,8 +2,6 @@ class DreamjobController < ApplicationController
   def randojob
 
         @unicorn_click = params[:unicorn]
-
-        require 'cb'
         require 'pry'
 
         # add our developer key to the cb gem configuration
@@ -13,8 +11,9 @@ class DreamjobController < ApplicationController
         #     end
 
         # ask the important questions
-            search_location = "atlanta, ga"
-            search_this_keyword = "Software Engineer"
+            job_array = ["lawyer", "doctor", "engineer", "police", "fire", "surgeon", "manager", "teacher"]
+            search_location = "Atlanta, Ga"
+            search_this_keyword = job_array.shuffle.shuffle.first
 
         # the api wants keywords as comma seperated
             user_keywords = search_this_keyword.split(" ").join(',')

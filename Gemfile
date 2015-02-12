@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #CB API from GRRP
-gem 'cb-api'
+gem 'cb-api', require: 'cb'
 #Debugger
 gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
