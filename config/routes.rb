@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dreamjob/randojob'
+  root 'dreamjob#randojob'
 
   get 'dreamjob/jobpath'
 
