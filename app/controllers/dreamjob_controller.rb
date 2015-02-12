@@ -14,7 +14,7 @@ class DreamjobController < ApplicationController
             search_this_keyword = "Software Engineer"
 
         # the api wants keywords as comma seperated
-            user_keywords = keyword_input.split(" ").join(',')
+            user_keywords = search_this_keyword.split(" ").join(',')
 
         # Use our CB job helper to search for jobs in atlanta
             results = Cb.job.search({ location: search_location,
@@ -23,7 +23,7 @@ class DreamjobController < ApplicationController
                                     })
 
             results.model.jobs.each do |job|
-              puts "Title: #{job.title}"
+              @title = job.title
               puts "Pay: #{job.pay}"
               puts "Location: #{job.location}"
     end
