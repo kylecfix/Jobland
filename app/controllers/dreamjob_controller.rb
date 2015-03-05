@@ -11,9 +11,9 @@ class DreamjobController < ApplicationController
         #     end
 
         # ask the important questions
-            job_array = ["lawyer", "doctor", "engineer", "police", "fire", "surgeon", "manager", "teacher"]
+            job_array = ["lawyer", "doctor", "engineer", "police", "fire", "teacher", "computer scientist"]
             location_array = ["Atlanta", "Raleigh", "Orlando", "Indianapolis", "Denver"]
-            search_location = location_array.shuffle.last
+            search_location = location_array
             search_this_keyword = job_array.shuffle.shuffle.first
 
         # the api wants keywords as comma seperated

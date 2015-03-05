@@ -5,8 +5,7 @@
   <%if @unicorn_click=="yes"%>
       <div>
             <%@results.model.jobs.each do |job|%>
-              <%=@title = job.title%>
-              <%=@location =  job.location%>
+            <%=@title = job.title%> <%=@location =  job.location%>
           	<%end%> 
           	<p>DO ALL THE THINGS!</p>
 <a href="http://localhost:3000/dreamjob/jobpath"><img src="http://cdn2.technology.ie/wp-content/uploads/2013/10/pickme.jpg" height= "300" width= "300"/></a>
